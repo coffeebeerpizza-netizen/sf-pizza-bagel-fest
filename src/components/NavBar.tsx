@@ -33,7 +33,10 @@ export default function NavBar() {
   }
 
   return (
-    <nav style={{ backgroundColor: '#1e0d00', borderBottom: '2px solid #d42b2b' }}>
+    <nav
+      className="sticky top-0 z-50"
+      style={{ backgroundColor: '#1e0d00', borderBottom: '2px solid #d42b2b', paddingTop: 'env(safe-area-inset-top)' }}
+    >
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold" style={{ color: '#f5a623', fontFamily: 'Georgia, serif', letterSpacing: '0.05em' }}>
           🍕 SF Fest
@@ -66,23 +69,31 @@ export default function NavBar() {
         </div>
 
         {/* Mobile hamburger */}
-        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} style={{ color: '#fdf6e3' }}>
+        <button
+          className="md:hidden text-xl -mr-2 p-2"
+          onClick={() => setMenuOpen(!menuOpen)}
+          style={{ color: '#fdf6e3', touchAction: 'manipulation' }}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        >
           {menuOpen ? '✕' : '☰'}
         </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden px-4 pb-4 flex flex-col gap-3" style={{ backgroundColor: '#1e0d00' }}>
+        <div
+          className="md:hidden px-4 pb-4 flex flex-col gap-1"
+          style={{ backgroundColor: '#1e0d00', paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+        >
           {links.map(({ href, label }) => (
-            <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="text-sm py-1" style={{ color: pathname === href ? '#f5a623' : '#fdf6e3' }}>
+            <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="text-base py-2.5" style={{ color: pathname === href ? '#f5a623' : '#fdf6e3' }}>
               {label}
             </Link>
           ))}
           {user ? (
-            <button onClick={handleSignOut} className="text-sm text-left" style={{ color: '#f5a623' }}>Sign Out</button>
+            <button onClick={handleSignOut} className="text-base py-2.5 text-left" style={{ color: '#f5a623' }}>Sign Out</button>
           ) : (
-            <Link href="/auth" onClick={() => setMenuOpen(false)} className="text-sm" style={{ color: '#f5a623' }}>Sign In / Register</Link>
+            <Link href="/auth" onClick={() => setMenuOpen(false)} className="text-base py-2.5" style={{ color: '#f5a623' }}>Sign In / Register</Link>
           )}
         </div>
       )}

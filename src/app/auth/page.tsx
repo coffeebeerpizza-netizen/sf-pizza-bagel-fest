@@ -71,7 +71,7 @@ export default function AuthPage() {
                 value={displayName}
                 onChange={e => setDisplayName(e.target.value)}
                 required
-                className="w-full px-3 py-2 rounded text-sm"
+                className="w-full px-3 py-2 rounded text-base"
                 style={{ backgroundColor: '#2a1000', border: '1px solid #4a2800', color: '#fdf6e3' }}
                 placeholder="Pizza Lover"
               />
@@ -85,7 +85,7 @@ export default function AuthPage() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
-              className="w-full px-3 py-2 rounded text-sm"
+              className="w-full px-3 py-2 rounded text-base"
               style={{ backgroundColor: '#2a1000', border: '1px solid #4a2800', color: '#fdf6e3' }}
               placeholder="you@example.com"
             />
@@ -99,7 +99,7 @@ export default function AuthPage() {
               onChange={e => setPassword(e.target.value)}
               required
               minLength={6}
-              className="w-full px-3 py-2 rounded text-sm"
+              className="w-full px-3 py-2 rounded text-base"
               style={{ backgroundColor: '#2a1000', border: '1px solid #4a2800', color: '#fdf6e3' }}
               placeholder="••••••••"
             />

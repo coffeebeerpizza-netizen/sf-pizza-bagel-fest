@@ -81,7 +81,7 @@ export default function RatingForm({ vendor, existingRating }: RatingFormProps) 
           value={notes}
           onChange={e => setNotes(e.target.value)}
           rows={2}
-          className="w-full rounded px-3 py-2 text-sm resize-none"
+          className="w-full rounded px-3 py-2 text-base resize-none"
           style={{ backgroundColor: '#2a1000', border: '1px solid #4a2800', color: '#fdf6e3' }}
           placeholder="What stood out?"
         />
