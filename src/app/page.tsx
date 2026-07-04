@@ -23,7 +23,7 @@ export default function HomePage() {
           <p className="text-lg mb-2" style={{ color: '#c8a880' }}>Stockton &amp; Filbert Streets · Washington Square</p>
           <p className="text-sm mb-8" style={{ color: '#8a6040' }}>Hosted by Tony Gemignani &amp; the SF Italian Athletic Club Foundation</p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
             <Link
               href="/pizza"
               className="w-full sm:w-auto px-8 py-3 rounded-full text-lg font-bold text-center transition-all hover:scale-105"
