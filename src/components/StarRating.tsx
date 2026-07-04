@@ -19,7 +19,13 @@ export default function StarRating({ value, onChange, readonly = false, size = '
           disabled={readonly}
           onClick={() => onChange?.(star)}
           className={`${sizes[size]} ${readonly ? 'cursor-default' : 'cursor-pointer star-btn'}`}
-          style={{ color: (value ?? 0) >= star ? '#f5a623' : '#4a3520', background: 'none', border: 'none', padding: '0 1px' }}
+          style={{
+            color: (value ?? 0) >= star ? '#f5a623' : '#4a3520',
+            background: 'none',
+            border: 'none',
+            padding: readonly ? '0 1px' : '8px 4px',
+            touchAction: 'manipulation',
+          }}
           aria-label={`${star} star${star !== 1 ? 's' : ''}`}
         >
           ★
