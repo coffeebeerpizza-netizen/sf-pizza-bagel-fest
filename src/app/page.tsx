@@ -26,14 +26,14 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/pizza"
-              className="px-8 py-3 rounded-full text-lg font-bold transition-all hover:scale-105"
+              className="w-full sm:w-auto px-8 py-3 rounded-full text-lg font-bold text-center transition-all hover:scale-105"
               style={{ backgroundColor: '#d42b2b', color: '#fdf6e3' }}
             >
               🍕 Rate Pizza
             </Link>
             <Link
               href="/bagels"
-              className="px-8 py-3 rounded-full text-lg font-bold transition-all hover:scale-105"
+              className="w-full sm:w-auto px-8 py-3 rounded-full text-lg font-bold text-center transition-all hover:scale-105"
               style={{ backgroundColor: '#e8621a', color: '#fdf6e3' }}
             >
               🥯 Rate Bagels
